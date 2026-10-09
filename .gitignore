@@ -1,0 +1,33 @@
+# Dependencies
+**/vendor/
+**/node_modules/
+
+# Environment files
+**/.env
+**/.env.backup
+**/.env.*.local
+
+# SQLite Databases & temporary files
+**/*.sqlite
+**/*.sqlite-journal
+**/db_tugas2
+
+# Laravel Storage & Cache
+**/storage/framework/cache/data/*
+**/storage/framework/sessions/*
+**/storage/framework/testing/*
+**/storage/framework/views/*
+**/storage/logs/*
+!**/storage/framework/cache/data/.gitignore
+!**/storage/framework/sessions/.gitignore
+!**/storage/framework/testing/.gitignore
+!**/storage/framework/views/.gitignore
+!**/storage/logs/.gitignore
+**/bootstrap/cache/*
+!**/bootstrap/cache/.gitignore
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
