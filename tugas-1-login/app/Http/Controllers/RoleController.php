@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChangeRoleRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Services\RoleManagementService;
+use Illuminate\Http\RedirectResponse;
 
 class RoleController extends Controller
 {
-    public function update(Request $request, User $user)
-    {
-        //
+    public function update(
+        ChangeRoleRequest $request,
+        User $user,
+        RoleManagementService $service
+    ): RedirectResponse {
+        $data = $request->validated();
+        $service->changeRole($request->user(), $user, $data['role']);
+        return back()->with('status', 'Role diperbarui.');
     }
 }
